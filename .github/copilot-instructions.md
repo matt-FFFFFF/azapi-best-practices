@@ -7,7 +7,7 @@ Always reference these instructions first and fallback to search or bash command
 ## Working Effectively
 
 ### Initial Setup and Build Process
-- Install Hugo Extended (CRITICAL: v0.146.0+ required, despite GitHub workflow using v0.120.4):
+- Install Hugo Extended (CRITICAL: v0.150.0+ required):
   ```bash
   wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.146.0/hugo_extended_0.146.0_linux-amd64.deb
   sudo dpkg -i /tmp/hugo.deb
