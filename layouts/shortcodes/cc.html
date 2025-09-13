@@ -1,0 +1,35 @@
+{{/* Creative Commons License Shortcode
+Usage: {{< cc "by-nc-sa">}} (default)
+  You can pass a string containing license components separated by spaces or dashes, e.g.
+  {{< cc "by nc sa">}} or {{< cc "by-nc">}}
+      */}}
+      {{ $options := (.Get 0) | default "by-nc-sa" }}
+      {{ $normalized := replace $options " " "-" }}
+      {{ $url := printf "https://creativecommons.org/licenses/%s/4.0" $normalized }}
+
+      <style>
+        .license-badge img {
+          width: 24px;
+          height: 24px;
+          vertical-align: middle;
+        }
+
+        a.license-badge {
+          text-decoration: none;
+          border: 0;
+          display: inline-flex;
+          gap: 2px;
+          align-items: center;
+        }
+      </style>
+      <a class="license-badge" href="{{ $url }}" rel="license noopener" target="_blank"
+        title="Creative Commons 4.0 {{ $normalized }} license">
+        {{ with resources.Get "/creative-commons-icons/cc.jpg" }}<img src="{{ .RelPermalink }}" alt="CC"
+          loading="lazy">{{ end }}
+        {{ if in $normalized "by" }}{{ with resources.Get "/creative-commons-icons/by.jpg" }}<img
+          src="{{ .RelPermalink }}" alt="BY" loading="lazy">{{ end }}{{ end }}
+        {{ if in $normalized "nc" }}{{ with resources.Get "/creative-commons-icons/nc.jpg" }}<img
+          src="{{ .RelPermalink }}" alt="NC" loading="lazy">{{ end }}{{ end }}
+        {{ if in $normalized "sa" }}{{ with resources.Get "/creative-commons-icons/sa.jpg" }}<img
+          src="{{ .RelPermalink }}" alt="SA" loading="lazy">{{ end }}{{ end }}
+      </a>

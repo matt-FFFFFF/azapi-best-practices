@@ -1,0 +1,29 @@
+{{/* License badge partial. Configuration:
+- Default license components come from site param: params.licenseOptions (fallback: "by-nc-sa")
+- Override per page with front matter param: licenseOptions
+*/}}
+{{ $default := or (.Site.Params.licenseOptions) "by-nc-sa" }}
+{{ $options := or (.Page.Params.licenseOptions) $default }}
+{{ $normalized := replace $options " " "-" }}
+{{ $url := printf "https://creativecommons.org/licenses/%s/4.0" $normalized }}
+
+{{/* Build icons */}}
+{{ $icons := slice "cc" }}
+{{ if in $normalized "by" }}{{ $icons = $icons | append "by" }}{{ end }}
+{{ if in $normalized "nc" }}{{ $icons = $icons | append "nc" }}{{ end }}
+{{ if in $normalized "sa" }}{{ $icons = $icons | append "sa" }}{{ end }}
+
+<div class="license-badge-wrapper" style="margin-top:1.5rem; font-size:0.8rem;">
+  <a class="license-badge" href="{{ $url }}" rel="license noopener" target="_blank"
+    title="Creative Commons 4.0 {{ $normalized }} license"
+    style="text-decoration:none; border:0; display:inline-flex; gap:2px; align-items:center;">
+    {{ range $icons }}
+    {{ with resources.Get (printf "/creative-commons-icons/%s.jpg" .) }}
+    <img src="{{ .RelPermalink }}" alt="{{ .Name }}" loading="lazy"
+      style="width:24px;height:24px;vertical-align:middle;" />
+    {{ end }}
+    {{ end }}
+  </a>
+  <span style="margin-left:6px;">Content licensed under CC {{ upper (replace $normalized "-" " ") }} 4.0 unless noted
+    otherwise.</span>
+</div>
