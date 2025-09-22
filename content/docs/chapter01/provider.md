@@ -67,9 +67,9 @@ Here is the minimum required provider configuration for OpenID Connect:
 
 ```hcl
 provider "azapi" {
+  client_id       = "00000000-0000-0000-0000-000000000000"
   subscription_id = "00000000-0000-0000-0000-000000000000"
   tenant_id       = "00000000-0000-0000-0000-000000000000"
-  client_id       = "00000000-0000-0000-0000-000000000000"
   use_oidc        = true
 }
 ```
@@ -78,9 +78,9 @@ However this is somewhat inflexible to hard-code the values. A better approach i
 
 | Variable               | Example Value                          |
 | :--------------------- | :------------------------------------  |
+| `ARM_CLIENT_ID`        | `00000000-0000-0000-0000-000000000000` |
 | `ARM_SUBSCRIPTION_ID`  | `00000000-0000-0000-0000-000000000000` |
 | `ARM_TENANT_ID`        | `00000000-0000-0000-0000-000000000000` |
-| `ARM_CLIENT_ID`        | `00000000-0000-0000-0000-000000000000` |
 | `ARM_USE_OIDC`         | `true`                                 |
 
 {{% hint info %}}
