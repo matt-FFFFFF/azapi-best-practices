@@ -92,17 +92,25 @@ If using another CI/CD platform, you may set these via the environment variables
 - `ARM_OIDC_REQUEST_URL`
 {{% /hint %}}
 
-## Preflight - Catch errors at plan time
+## Preflight - catch errors at plan time
 
-The `enable_preflight` attribute (`ARM_ENABLE_PREFLIGHT` environment variable) is a useful feature that can help catch errors early. When enabled, the provider will make a call to the Azure Resource Manager (ARM) API to try and validate the payload before making any changes. The API called is the `Microsoft.Resources/validateResources` action.
+The `enable_preflight` attribute (`ARM_ENABLE_PREFLIGHT` environment variable) is a useful feature that can help catch errors early. When enabled, the provider will make a call to the Azure Resource Manager (ARM) API to try and validate the payload before making any changes. The API called is: `/providers/Microsoft.Resources/validateResources`.
 
-This setting can help identify issues with Azure Policy (finally!). Meaning the plan will fail if the resource creation or update would be blocked by a policy.
+Scenarios where this is useful include:
+
+1. Creating or updating resources that are subject to Azure Policy. If the resource creation or update would be blocked by a policy, the plan will fail.
+1. Resource naming uniqueness. If you are creating a resource with a name that is already in use, the plan will fail.
+1. Invalid property values. If you are creating or updating a resource with invalid property values, the plan will fail.
+
+Read more about this in the provider documentation: [Preflight validation](https://registry.terraform.io/providers/Azure/azapi/latest/docs/guides/feature_preflight).
 
 ## Ignoring no-op changes
 
-Since version `v2.5.0`, the `ignore_no_op_changes` attribute has been added to the provider. The default is `true`, which means that the provider will ignore changes that do not result in any actual changes to the resource. Some good examples of this:
+Since version v2.5.0, the `ignore_no_op_changes` attribute has been added to the provider. The default is `true`, which means that the provider will ignore changes that do not result in any actual changes to the resource. Some good examples of this:
 
 1. API versions changes
-1. Adding or removing properties that match state
+1. Adding or removing properties that match the resource's values
 
 The way this works is that, during the plan, the provider will fetch the current state of the resource from Azure and compare it to the desired state. If there are no differences, then only state is updated and no API request is made to Azure.
+
+Read more about this in the provider documentation: [Detect and manage resource changes](https://registry.terraform.io/providers/Azure/azapi/latest/docs/guides/feature_change_detection).
