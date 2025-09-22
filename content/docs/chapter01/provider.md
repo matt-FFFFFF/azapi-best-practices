@@ -42,8 +42,6 @@ It's often possible to customize the subject claims to suit your needs. For exam
 
 Finally, the audience is a list of strings that identify the intended recipients of the token. For Azure, this should always be `["api://AzureADTokenExchange"]`.
 
-If you are using Azure DevOps, you will configure the federated credential using a service connection. The process is documented
-
 Using Workload Identity Federation is a game-changer for secure authentication in CI/CD pipelines. It works with most CI/CD systems:
 
 - [Azure DevOps](https://learn.microsoft.com/azure/devops/pipelines/release/configure-workload-identity?view=azure-devops&tabs=managed-identity)
