@@ -16,7 +16,7 @@ For CI/CD pipelines, you should not be using anything other than Workload Identi
 
 It is good practice to configure two identities for your pipelines: one for plan and one for apply. The plan identity should have read-only access to the resources it needs to read. The apply identity should have the necessary permissions to create, update, and delete resources, as well as register resource providers.
 
-You can read more about this up in the [official documentation](https://learn.microsoft.com/entra/workload-id/workload-identity-federation).
+You can read more about this in the [official documentation](https://learn.microsoft.com/entra/workload-id/workload-identity-federation).
 
 ### How to set up Workload Identity Federation
 
