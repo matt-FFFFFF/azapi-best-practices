@@ -6,11 +6,11 @@ weight: 100
 
 # Chapter 1: The AzAPI Provider and its resources
 
-The AzAPI provider is a powerful tool that warrants a deep understanding to be used effectively. This chapter introduces the AzAPI provider, its design philosophy, and its core resources. It is built on top of the Azure REST APIs, providing a consistent and unified interface for managing Azure resources.
+The AzAPI provider is a powerful tool that warrants a deep understanding to be used effectively. This chapter introduces the AzAPI provider, its design philosophy, and its core resources.
 
 ## Design Philosophy and comparison to AzureRM
 
-The AzAPI provider is designed to be a low-level, flexible, and extensible solution for managing Azure resources. It is a general-purpose provider that can manage any Azure management-plane resource. This is a crucial difference to AzureRM, which provides resource types for specific Azure services. AzAPI's general-purpose approach allows it to support new and preview Azure services as soon as they are available in ARM, without needing to wait for the provider to be updated.
+The AzAPI provider is designed to be a low-level, flexible, and extensible solution for managing Azure resources. It is a general-purpose provider, built on top of the Azure REST APIs. It's number one superpower is that it can manage any Azure management-plane resource. This is a crucial difference to AzureRM, which provides resource types for specific Azure services. AzAPI's general-purpose approach allows it to support new and preview Azure services as soon as they are available in ARM, without needing to wait for the provider to be updated.
 
 AzAPI has limited support for data-plane resources, which are resources that manage the data within a service, such as the contents of a storage account. In general, AzureRM provides richer support for data-plane resources.
 
@@ -81,4 +81,5 @@ We will cover these in more detail in subsequent pages, but here is a brief over
 1. `tenant_resource_id`
 1. `unique_string`
 
-Let's look at these resources in detail, starting with the most important one, [`azapi_resource`](azapi_resource.md).
+
+Before we dive into each resource, let's look at [how to configure the provider →](provider.md)

@@ -18,7 +18,7 @@ Additionally, with version 2.0 of AzAPI we have some unique and awesome features
 
 I make no bones about it, I have been a proponent of the AzAPI provider since its inception. It started with a desire to be freed from some of the artificial constraints of AzureRM, and has grown into a powerful tool with amazing features that I use for all my Azure infrastructure as code (IaC) projects. Maybe after reading this book you will feel the same way!
 
-As with everything, with great power comes great responsibility. The AzAPI provider's design flexibility does have a steeper learning curve than its fully curated cousin, AzureRM. You will get to know the ins and outs of the Azure REST APIs as you work with the AzAPI provider. *This is a good thing!* It will make you a more capable and confident Terraform on Azure user. You will be able to do things in HCL[^1] that previously had to be authored in Go. This book aims to equip you with the knowledge and best practices to harness the full potential of the AzAPI provider while avoiding common pitfalls.
+As with everything, with great power comes great responsibility. The AzAPI provider's design flexibility does have a steeper learning curve than its fully curated cousin, AzureRM. You will get to know the ins-and-outs of the Azure REST APIs as you work with the AzAPI provider. *This is a good thing!* It will make you a more capable and confident Terraform on Azure user. You will be able to do things in HCL[^1] that previously had to be authored in Go. This book aims to equip you with the knowledge and best practices to harness the full potential of the AzAPI provider while avoiding common pitfalls.
 
 ## What You'll Learn
 
@@ -31,7 +31,7 @@ As with everything, with great power comes great responsibility. The AzAPI provi
   - How to construct the `body` argument when things get complex
   - How to use `azapi_resource_action` to invoke one-shot actions on resources
 
-## Prerequisites
+## Pre-requisites
 
 Readers should have an intermediate understanding of Terraform and its features. At a minimum, you should be familiar with the following concepts:
 
