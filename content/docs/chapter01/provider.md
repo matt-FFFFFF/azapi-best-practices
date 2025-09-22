@@ -47,7 +47,7 @@ If you are using Azure DevOps, you will configure the federated credential using
 Using Workload Identity Federation is a game-changer for secure authentication in CI/CD pipelines. It works with most CI/CD systems:
 
 - [Azure DevOps](https://learn.microsoft.com/azure/devops/pipelines/release/configure-workload-identity?view=azure-devops&tabs=managed-identity)
-- GitHub Actions (see [here](https://docs.github.com/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-azure)
+- [GitHub Actions](https://docs.github.com/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-azure)
 - [GitLab](https://docs.gitlab.com/ci/cloud_services/azure/)
 - [Terraform Cloud](https://developer.hashicorp.com/terraform/cloud-docs/workspaces/dynamic-provider-credentials/azure-configuration)
 
