@@ -10,7 +10,7 @@ Before we can make the provider do work, we need to configure it. I am not going
 
 ## Authentication
 
-For local work, then Azure CLI authentication is the easiest to set up. Just run `az login` and you are good to go. The provider will automatically pick up the credentials from your Azure CLI session. Boom.
+For local work, then Azure CLI authentication is the easiest to set up. Just run `az login` and you are good to go. The provider will automatically pick up the credentials from your Azure CLI session.
 
 For CI/CD pipelines, you should not be using anything other than Workload Identity Federation, also known as OpenID Connect (OIDC). This is the most secure way to authenticate, as it avoids the need to manage service principal credentials. Instead, a short-lived token is issued by a trusted identity provider (IdP) and exchanged for Azure credentials.
 
