@@ -78,10 +78,10 @@ endLevel = 3
 [markup.highlight]
 codeFences = true
 guessSyntax = true
-lineNos = true
+lineNos = false
 lineNumbersInTable = true
-style = 'github'
-tabWidth = 4
+style = 'github-dark'
+tabWidth = 2
 
 # [[menu.before]]
 # name = "Table of contents"
